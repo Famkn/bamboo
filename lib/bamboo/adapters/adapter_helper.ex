@@ -3,5 +3,6 @@ defmodule Bamboo.AdapterHelper do
     config
     |> Map.get(:hackney_opts, [])
     |> Enum.concat([:with_body])
+    |> Enum.concat(Application.get_env(:bamboo, :hackney_opts, []))
   end
 end
